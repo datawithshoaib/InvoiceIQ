@@ -1,43 +1,63 @@
-# InvoiceIQ - FastAPI & LangGraph Backend Service
+# InvoiceIQ backend
 
-Enterprise-grade microservice for multi-modal document extraction, LangGraph state machine routing, Pydantic v2 validation, Text-to-SQL financial intelligence, NeMo Guardrails, and Ragas Evaluations.
+FastAPI service with two LangGraph agents (invoice extraction and Text-to-SQL), deterministic guardrails, and eval suites. Managed with **uv**.
 
-## Tech Stack
-- **Framework**: FastAPI (Python 3.10+) & Uvicorn
-- **AI Agent Framework**: LangChain & LangGraph (StateGraph with checkpointers and conditional edges)
-- **Validation**: Pydantic v2 (strict model validators, financial math consistency)
-- **Database & ORM**: SQLAlchemy & SQLite / PostgreSQL
-- **Safety**: Guardrails Engine (PII masking with PCI-DSS regex, SQL AST validator, prompt injection filter)
-- **Evaluations**: Benchmark test runner measuring Field Accuracy, Categorization F1, SQL Execution Accuracy, and Hallucination rate
+## Setup
 
-## Getting Started
-
-### 1. Setup Virtual Environment
 ```bash
-python3 -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-pip install -r requirements.txt
+cp .env.example .env     # set GOOGLE_API_KEY (or switch LLM_MODEL, see below)
+uv sync                  # creates .venv from uv.lock
+uv run fastapi dev       # http://localhost:8000/docs
 ```
 
-### 2. Configure Environment Variables
-Create a `.env` file:
-```env
-OPENAI_API_KEY="your-openai-api-key"
-# or
-GEMINI_API_KEY="your-gemini-api-key"
-DATABASE_URL="sqlite:///./invoiceiq.db"
-```
+### Choosing a model
 
-### 3. Run FastAPI Dev Server
+`LLM_MODEL` accepts any `provider:model` string supported by LangChain's `init_chat_model`. The default is `google_genai:gemini-2.5-flash`. For OpenAI:
+
 ```bash
-uvicorn main:app --reload --host 0.0.0.0 --port 8000
+uv sync --extra openai
+# .env: LLM_MODEL=openai:gpt-4.1-mini and OPENAI_API_KEY=...
 ```
-API Documentation will be live at:
-- Swagger UI: `http://localhost:8000/docs`
-- ReDoc: `http://localhost:8000/redoc`
 
-### 4. Run Docker Container
-```bash
-docker build -t invoiceiq-backend .
-docker run -p 8000:8000 invoiceiq-backend
+## Commands
+
+| Task                              | Command                                     |
+| --------------------------------- | ------------------------------------------- |
+| Dev server (reload)               | `uv run fastapi dev`                        |
+| Tests                             | `uv run pytest`                             |
+| Lint / format                     | `uv run ruff check . && uv run ruff format .` |
+| Guardrail eval (CI gate, no LLM)  | `uv run python -m app.evals guardrails`     |
+| Extraction eval (LLM calls)       | `uv run python -m app.evals extraction --limit 5` |
+| Add a dependency                  | `uv add <package>` / `uv add --dev <package>` |
+| Docker                            | `docker build -t invoiceiq-api . && docker run -p 8000:8000 --env-file .env invoiceiq-api` |
+
+## Layout
+
 ```
+app/
+  main.py               app factory, lifespan (create tables + seed), routers, 503 handler
+  core/config.py        pydantic-settings (env / .env)
+  core/llm.py           init_chat_model factory
+  db/                   SQLAlchemy 2.0 models, Database wiring, seed data
+  schemas/              API models (camelCase JSON) and LLM structured-output models
+  services/guardrails.py PII redaction, prompt-injection, sqlglot SQL guard, math checks
+  agents/extraction.py  LangGraph: ingest → guardrails → extract ⇄ validate → persist
+  agents/sql_agent.py   LangGraph: screen → generate ⇄ guard → execute (read-only)
+  evals/                eval suites + CLI
+  api/                  dependencies and route modules
+tests/                  pytest; agents run against a scripted fake chat model
+```
+
+## API
+
+| Method | Path                         | Description                                  |
+| ------ | ---------------------------- | -------------------------------------------- |
+| GET    | `/health`                    | Liveness                                     |
+| GET    | `/api/v1/invoices`           | List invoices                                |
+| GET    | `/api/v1/invoices/{id}`      | Invoice detail                               |
+| DELETE | `/api/v1/invoices/{id}`      | Delete an invoice                            |
+| POST   | `/api/v1/extract`            | Multipart `file` (PDF/image/text) or `text`  |
+| POST   | `/api/v1/query`              | `{ "question": "..." }` → SQL + rows + chart |
+| POST   | `/api/v1/guardrails/{pii,prompt,sql,math}` | Individual guardrails          |
+| POST   | `/api/v1/evals/guardrails`   | Deterministic guardrail suite                |
+| POST   | `/api/v1/evals/extraction`   | LLM extraction suite (`?limit=3`)            |
