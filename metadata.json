@@ -1,0 +1,6 @@
+{
+  "name": "InvoiceIQ - Production AI Agent & Financial Intelligence Platform",
+  "description": "Enterprise-grade Invoice & Receipt Intelligence with LangGraph extraction, Text-to-SQL financial querying, Pydantic schemas, Guardrails, and LLM Evals.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
