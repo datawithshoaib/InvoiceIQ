@@ -1,0 +1,303 @@
+[
+  {
+    "id": "inv-aws-001",
+    "invoice_number": "AWS-2024-88391",
+    "vendor_name": "Amazon Web Services, Inc.",
+    "vendor_address": "410 Terry Avenue North, Seattle, WA 98109",
+    "date": "2024-08-14",
+    "due_date": "2024-09-14",
+    "currency": "USD",
+    "subtotal": 1248.5,
+    "tax": 102.38,
+    "total": 1350.88,
+    "category": "Cloud Infrastructure",
+    "payment_method": "Corporate Visa ****8492",
+    "file_name": "aws_invoice_aug2024.pdf",
+    "processing_time_ms": 420,
+    "line_items": [
+      {
+        "id": "li-1",
+        "description": "Amazon Elastic Compute Cloud (EC2) - c6i.2xlarge",
+        "quantity": 720,
+        "unit_price": 0.68,
+        "amount": 489.6
+      },
+      {
+        "id": "li-2",
+        "description": "Amazon RDS for PostgreSQL - Multi-AZ db.r6g.xlarge",
+        "quantity": 720,
+        "unit_price": 0.72,
+        "amount": 518.4
+      },
+      {
+        "id": "li-3",
+        "description": "Amazon Simple Storage Service (S3) Standard Storage",
+        "quantity": 2400,
+        "unit_price": 0.023,
+        "amount": 55.2
+      },
+      {
+        "id": "li-4",
+        "description": "AWS Data Transfer Out to Internet",
+        "quantity": 2060,
+        "unit_price": 0.09,
+        "amount": 185.3
+      }
+    ],
+    "raw_text": "AMAZON WEB SERVICES, INC.\nINVOICE NUMBER: AWS-2024-88391\nInvoice Date: August 14, 2024\nBilling Period: July 1 - July 31, 2024\nBill To: Acme AI Technologies, Inc.\n\nSummary:\nAmazon EC2 Compute Hours: $489.60\nAmazon RDS Multi-AZ Database: $518.40\nAmazon S3 Storage: $55.20\nAWS Data Transfer: $185.30\nSubtotal: $1,248.50\nEstimated Tax (8.2%): $102.38\nTOTAL AMOUNT DUE: $1,350.88\nPayment Method: Charged to Visa ending in 8492"
+  },
+  {
+    "id": "inv-figma-002",
+    "invoice_number": "FIG-993821",
+    "vendor_name": "Figma, Inc.",
+    "vendor_address": "760 Market St 10th Floor, San Francisco, CA 94102",
+    "date": "2024-08-01",
+    "due_date": "2024-08-01",
+    "currency": "USD",
+    "subtotal": 450,
+    "tax": 37.13,
+    "total": 487.13,
+    "category": "Software & SaaS",
+    "payment_method": "Corporate Amex ****9103",
+    "file_name": "figma_enterprise_aug.pdf",
+    "processing_time_ms": 380,
+    "line_items": [
+      {
+        "id": "li-5",
+        "description": "Figma Enterprise Seat - Annual Subscription",
+        "quantity": 6,
+        "unit_price": 75,
+        "amount": 450
+      }
+    ],
+    "raw_text": "FIGMA, INC. - TAX INVOICE\nInvoice: FIG-993821\nDate: August 1, 2024\nCustomer: Acme AI Technologies\nSeats: 6 x Figma Enterprise @ $75/seat/mo\nSubtotal: $450.00\nState & City Tax (8.25%): $37.13\nTotal Paid: $487.13\nPaid via AMEX ****9103"
+  },
+  {
+    "id": "inv-zoom-003",
+    "invoice_number": "ZM-2024-4412",
+    "vendor_name": "Zoom Video Communications",
+    "vendor_address": "55 Almaden Blvd, 6th Floor, San Jose, CA 95113",
+    "date": "2024-09-12",
+    "due_date": "2024-09-12",
+    "currency": "USD",
+    "subtotal": 180,
+    "tax": 15.3,
+    "total": 195.3,
+    "category": "Software & SaaS",
+    "payment_method": "Corporate Visa ****8492",
+    "file_name": "zoom_pro_plan.pdf",
+    "processing_time_ms": 350,
+    "line_items": [
+      {
+        "id": "li-6",
+        "description": "Zoom Business Plan (10 hosts)",
+        "quantity": 10,
+        "unit_price": 15,
+        "amount": 150
+      },
+      {
+        "id": "li-7",
+        "description": "Zoom Large Meeting Add-on 500",
+        "quantity": 1,
+        "unit_price": 30,
+        "amount": 30
+      }
+    ],
+    "raw_text": "ZOOM VIDEO COMMUNICATIONS, INC.\nInvoice ID: ZM-2024-4412\nDate: September 12, 2024\nPlan: Zoom Business (10 Licenses): $150.00\nAdd-on: Large Meeting 500: $30.00\nSubtotal: $180.00\nTaxes & Fees: $15.30\nTotal: $195.30"
+  },
+  {
+    "id": "inv-datadog-004",
+    "invoice_number": "DD-881203",
+    "vendor_name": "Datadog, Inc.",
+    "vendor_address": "620 8th Avenue, 45th Floor, New York, NY 10018",
+    "date": "2024-08-25",
+    "due_date": "2024-09-25",
+    "currency": "USD",
+    "subtotal": 780,
+    "tax": 64.35,
+    "total": 844.35,
+    "category": "Software & SaaS",
+    "payment_method": "Mastercard ****4019",
+    "file_name": "datadog_apm_logs.pdf",
+    "processing_time_ms": 460,
+    "line_items": [
+      {
+        "id": "li-8",
+        "description": "Datadog Pro Infrastructure Hosts (15 hosts)",
+        "quantity": 15,
+        "unit_price": 15,
+        "amount": 225
+      },
+      {
+        "id": "li-9",
+        "description": "APM & Continuous Profiler (15 hosts)",
+        "quantity": 15,
+        "unit_price": 31,
+        "amount": 465
+      },
+      {
+        "id": "li-10",
+        "description": "Log Management Ingestion (300 GB)",
+        "quantity": 300,
+        "unit_price": 0.3,
+        "amount": 90
+      }
+    ],
+    "raw_text": "DATADOG INVOICE DD-881203\nBilling Date: Aug 25, 2024\nInfrastructure Monitoring: $225.00\nAPM & Profiler: $465.00\nLog Management: $90.00\nNet Subtotal: $780.00\nSales Tax: $64.35\nTotal Invoiced: $844.35"
+  },
+  {
+    "id": "inv-starbucks-005",
+    "invoice_number": "SBUX-91823",
+    "vendor_name": "Starbucks Coffee Co.",
+    "vendor_address": "Market St & 4th, San Francisco, CA",
+    "date": "2024-09-18",
+    "currency": "USD",
+    "subtotal": 42.5,
+    "tax": 3.61,
+    "total": 46.11,
+    "category": "Meals & Entertainment",
+    "payment_method": "Apple Pay (Visa ****8492)",
+    "file_name": "starbucks_team_coffee.png",
+    "processing_time_ms": 290,
+    "line_items": [
+      {
+        "id": "li-11",
+        "description": "Iced Caramel Macchiato (Venti)",
+        "quantity": 3,
+        "unit_price": 6.25,
+        "amount": 18.75
+      },
+      {
+        "id": "li-12",
+        "description": "Nitro Cold Brew with Sweet Cream",
+        "quantity": 2,
+        "unit_price": 5.75,
+        "amount": 11.5
+      },
+      {
+        "id": "li-13",
+        "description": "Ham & Swiss Croissant",
+        "quantity": 2,
+        "unit_price": 6.125,
+        "amount": 12.25
+      }
+    ],
+    "raw_text": "STARBUCKS STORE #10492\nDate: 09/18/2024 09:32 AM\nReceipt # SBUX-91823\n3x Iced Caramel Macchiato: $18.75\n2x Nitro Cold Brew: $11.50\n2x Croissants: $12.25\nSubtotal: $42.50\nTax: $3.61\nTotal: $46.11\nCard: Apple Pay VISA 8492"
+  },
+  {
+    "id": "inv-uber-006",
+    "invoice_number": "UBR-TRIP-7731",
+    "vendor_name": "Uber Technologies, Inc.",
+    "vendor_address": "1515 3rd St, San Francisco, CA 94158",
+    "date": "2024-09-22",
+    "currency": "USD",
+    "subtotal": 68.4,
+    "tax": 5.81,
+    "total": 74.21,
+    "category": "Travel & Transport",
+    "payment_method": "Corporate Amex ****9103",
+    "file_name": "uber_trip_sfo.pdf",
+    "processing_time_ms": 310,
+    "line_items": [
+      {
+        "id": "li-14",
+        "description": "UberX Trip from SFO Airport to Downtown Hotel",
+        "quantity": 1,
+        "unit_price": 58.4,
+        "amount": 58.4
+      },
+      {
+        "id": "li-15",
+        "description": "Driver Tip",
+        "quantity": 1,
+        "unit_price": 10,
+        "amount": 10
+      }
+    ],
+    "raw_text": "UBER TRIP RECEIPT\nTrip ID: UBR-TRIP-7731\nDate: Sep 22, 2024\nPickup: San Francisco International Airport\nDropoff: Marriott Marquis, SF\nTrip Fare: $58.40\nTip: $10.00\nTaxes & City Surcharge: $5.81\nTotal Charged: $74.21"
+  },
+  {
+    "id": "inv-github-007",
+    "invoice_number": "GH-2024-00918",
+    "vendor_name": "GitHub, Inc.",
+    "vendor_address": "88 Colin P Kelly Jr St, San Francisco, CA 94107",
+    "date": "2024-07-15",
+    "due_date": "2024-07-15",
+    "currency": "USD",
+    "subtotal": 380,
+    "tax": 31.35,
+    "total": 411.35,
+    "category": "Software & SaaS",
+    "payment_method": "Corporate Visa ****8492",
+    "file_name": "github_copilot_enterprise.pdf",
+    "processing_time_ms": 370,
+    "line_items": [
+      {
+        "id": "li-16",
+        "description": "GitHub Enterprise Cloud (10 seats)",
+        "quantity": 10,
+        "unit_price": 21,
+        "amount": 210
+      },
+      {
+        "id": "li-17",
+        "description": "GitHub Copilot Business (10 seats)",
+        "quantity": 10,
+        "unit_price": 19,
+        "amount": 190
+      }
+    ],
+    "raw_text": "GITHUB, INC.\nINVOICE # GH-2024-00918\nDate: July 15, 2024\nCustomer: Acme AI Technologies\nGitHub Enterprise Cloud (10 seats): $210.00\nGitHub Copilot Business (10 seats): $190.00\nSubtotal: $400.00 (with $20 discount = $380.00)\nTax: $31.35\nTotal: $411.35"
+  },
+  {
+    "id": "inv-wework-008",
+    "invoice_number": "WW-2024-8841",
+    "vendor_name": "WeWork Companies LLC",
+    "vendor_address": "575 5th Ave, New York, NY 10017",
+    "date": "2024-08-05",
+    "due_date": "2024-08-05",
+    "currency": "USD",
+    "subtotal": 1850,
+    "tax": 164.19,
+    "total": 2014.19,
+    "category": "Office & Facilities",
+    "payment_method": "ACH Transfer ****5519",
+    "file_name": "wework_private_office.pdf",
+    "processing_time_ms": 490,
+    "line_items": [
+      {
+        "id": "li-18",
+        "description": "Dedicated Private Office (6 desks) - SF Financial District",
+        "quantity": 1,
+        "unit_price": 1850,
+        "amount": 1850
+      }
+    ],
+    "raw_text": "WEWORK COMPANIES LLC\nInvoice: WW-2024-8841\nBilling Month: August 2024\nLocation: 600 California St, San Francisco, CA\nDedicated Office - 6 Desks: $1,850.00\nLocal Facilities Tax & Surcharge: $164.19\nTotal: $2,014.19\nPayment Method: Auto-Debit Bank Account ****5519"
+  },
+  {
+    "id": "inv-apple-009",
+    "invoice_number": "APL-R-99214",
+    "vendor_name": "Apple Store Inc.",
+    "vendor_address": "1 Apple Park Way, Cupertino, CA 95014",
+    "date": "2024-09-05",
+    "currency": "USD",
+    "subtotal": 2499,
+    "tax": 218.66,
+    "total": 2717.66,
+    "category": "Hardware & Equipment",
+    "payment_method": "Corporate Visa ****8492",
+    "file_name": "apple_macbook_pro.pdf",
+    "processing_time_ms": 520,
+    "line_items": [
+      {
+        "id": "li-19",
+        "description": "16-inch MacBook Pro M3 Max (36GB Unified Memory, 1TB SSD)",
+        "quantity": 1,
+        "unit_price": 2499,
+        "amount": 2499
+      }
+    ],
+    "raw_text": "APPLE STORE - RETAIL RECEIPT\nReceipt Number: APL-R-99214\nOrder Date: September 5, 2024\nItem: 16-inch MacBook Pro - Space Black\nSpecs: Apple M3 Max chip with 14-core CPU, 30-core GPU, 36GB RAM, 1TB SSD\nUnit Price: $2,499.00\nSales Tax (8.75%): $218.66\nTotal Tendered: $2,717.66"
+  }
+]
